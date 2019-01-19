@@ -1,0 +1,351 @@
+//main menu
+
+.fixed-header {
+    position: fixed;
+    left: 1%;
+    width: 98%;
+    top: .75rem;
+    box-sizing: border-box;
+    .container {
+        position: relative;
+        max-width: 1170px;
+        margin: 0 auto;
+    }
+    .topmenu {
+        display: none;
+    }
+    @media (min-width: 320px) and (max-width: 1024px) {
+        .topmenu {
+            display: flex;
+            padding: .5rem 0;
+        }
+    }
+}
+
+.main-header {
+    margin: 0 auto;
+    margin-top: 1rem;
+    position: absolute;
+    left: 5%;
+    width: 90%;
+    z-index: 49;
+    
+    .mainmenu {
+        background: $color-6;
+        border-radius: 120px;
+        line-height: 55px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        transform: translate3d(0, 0, 0);
+        transition: transform ease-out 400ms;
+        transform: translateY(0px);
+        .logo {
+            float: left;
+            position: relative;
+            height: auto;
+            text-indent: -999em;
+            img {
+                display: block;
+                width: 240px;
+            }
+        }
+        
+        .channelmenu {
+            float: right;
+            @media (min-width: 320px) and (max-width: 1024px) {
+                transform: translateY(100%);
+            }
+        }
+        .mainmenu-list {
+            text-align: center;
+            a {
+                font-size: .9rem;
+                color: $color-5;
+                padding: 0 15px;
+                display: block;
+                vertical-align: middle;
+                transform: perspective(1px) translateZ(0);
+                position: relative;
+                transition-property: color;
+                transition-duration: 0.3s;
+                min-width: 50px;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    z-index: -1;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: $color-8;
+                    transform: scaleY(0);
+                    transform-origin: 50% 0;
+                    transition-property: transform;
+                    transition-duration: 0.5s;
+                    transition-timing-function: ease-out;
+                }
+                &:hover, &:focus, &:active {
+                    background: $color-8;
+                    color: $color-1;
+                }
+                &:hover:before, &:focus:before {
+                    transform: scaleY(1);
+                }
+                @media (min-width: 768px) and (max-width: 1024px) {
+                    padding: 0 8px;
+                }
+            }
+            @media (min-width: 320px) and (max-width: 1024px) {
+                > li > a:hover, > li > a:focus, > li > a:active {
+                    background: $color-2;
+                    color: $color-5;
+                } 
+                a {
+                    transition-property: none;
+                    transition-duration: 0;
+                }
+                a:before {
+                    content: none;
+                    background: transparent;
+                }
+            }
+            .has-dropdown {
+                position: relative;
+                &:hover, &:focus, &:active {
+                    background: $color-8;
+                    > a { 
+                        color: $color-1;
+                    } 
+                }
+                .mainmenu-dropdown-list {
+                    position: absolute;
+                    top: 50px;
+                    left: -50%;
+                    transform: translateY(20px);
+//                    box-shadow: 0 10px 20px rgba(0, 0, 0, .08);
+                    width: 200%;
+                    transition: all 0.3s ease-in-out;
+                    transition-duration: .2s, 1s;
+                    transition-timing-function: linear, ease-in;
+                    transition-delay: 0s, 1s;
+                    visibility: hidden;
+                    
+                    &:after {
+                        content: "";
+                        border: transparent 10px solid;
+                        border-bottom: rgba($color-10, $alpha) 12px solid;
+                        position: absolute;
+                        top: -20px;
+                        left: 45%;
+                    }
+                    
+                    .links-list {
+                        border-radius: 5px;
+                        overflow: hidden;
+                    }
+                    
+                    a {
+                        background: rgba($color-10, $alpha);
+                        color: $color-5;
+                        padding: .35rem 0;
+                        margin: 1px auto;
+                        line-height: 44px;
+                        &:hover {
+                            color: $color-2;
+                        }
+                    }
+                    @media (min-width: 320px) and (max-width: 1024px) {
+                        position: relative;
+                        top:inherit;
+                        left: inherit;
+                        visibility: visible;
+                        width: 100%;
+                        transform: translateY(0px);
+                        &:after {
+                            content: none;
+                        }
+                        .links-list {
+                            display: flex;
+                            flex-wrap: wrap;
+                            flex-flow: row wrap;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 0 .5rem;
+                            li {
+                                margin: .25rem;
+                            }
+                            a {
+                                font-size: .8rem;
+                                padding: 0 .75rem;
+                                background: $color-10;
+                                border-radius: 5px;
+                            }
+                        }
+                    }
+                }
+                &:hover .mainmenu-dropdown-list {
+                    visibility: visible;
+                    transform: translateY(0);
+                }
+                
+                @media (min-width: 320px) and (max-width: 1024px) {
+                    line-height: 44px;
+                    margin: 1rem auto;
+                    &.active, &:hover {
+                        background: transparent;
+//                        padding: .25rem 0 .5rem;
+                    }
+                    &:hover, &:focus, &:active {
+                        background: $color-2;
+                        > a { 
+                            color: $color-5;
+                        } 
+                    }
+                }
+            }
+//            .has-dropdown.active > a {
+//                background: transparent;
+//                color: $color-5;
+//            }
+        }
+        
+        @media (min-width: 320px) and (max-width: 1024px) {
+            line-height: 24px;
+        }
+    }
+    
+    .nav-trigger {
+        display: none;
+        /* menu icon - visible on small screens only */
+        position: absolute;
+        top: 0;
+        right: -60px;
+        height: 60px;
+        width: 60px;
+        /* replace text with icon */
+        overflow: hidden;
+        text-indent: 100%;
+        white-space: nowrap;
+        color: transparent;
+    }
+    .nav-trigger:checked + .nav-trigger-button + .logo + .channelmenu {
+        display: block;
+        position: absolute;
+        z-index: 49;
+        width: 100%;
+        left: 0;
+        top: 0;
+        border-radius: 5px;
+        background: rgba($color-10, $alpha);
+        background: $color-2;
+        transition: all 0.5s ease-in-out;
+        transition-duration: .2s, 1s;
+        transition-timing-function: linear, ease-in;
+        transition-delay: 0s, 1s;
+        transform: translateY(0px);
+        height: 97vh;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        .mainmenu-list {
+            margin-top: 7rem;
+            padding-bottom: 2rem;
+            position: relative;
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+        .topmenu {
+            position: absolute;
+            margin: 0 auto;
+            padding: 0 0 1rem;
+            top: 3.5rem;
+            color: $color-5;
+            border-bottom: $color-5 1px solid;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            .search {
+                position: absolute;
+                top: -3.1rem;
+                right: 5rem;
+                .search-icon {
+                    font-size: 1.8rem;
+                }
+                input[type=text] {
+                    top: 6px;
+                }
+            }
+            .language a {
+                color: $color-5;
+            }
+        }
+    }
+    .lines {
+        width: 25px;
+        height: 3px;
+        background: #FFF;
+        display: none;
+        position: absolute;
+        top: 50%;
+        right: 2rem;
+        margin-left: -12.5px;
+        margin-top: -1.5px;
+        transition: transform 200ms;
+        z-index: 100;
+        &.line-1 {
+           transform: translate3d(0, -8px, 0);
+        }
+
+        &.line-2 {
+           transform: translate3d(0, 0, 0);
+        }
+
+        &.line-3 {
+           transform: translate3d(0, 8px, 0);
+        }
+    }
+
+    .nav-trigger:checked + .nav-trigger-button .line-1 {
+       transform: translate3d(0, 0, 0) rotate(45deg);
+    }
+
+    .nav-trigger:checked + .nav-trigger-button .line-2 {
+       transform: translate3d(0, 0, 0) scale(0.1, 1);
+    }
+
+    .nav-trigger:checked + .nav-trigger-button .line-3 {
+       transform: translate3d(0, 0, 0) rotate(-45deg);
+    }
+    
+    @media (min-width: 320px) and (max-width: 1024px) {
+        &.is-mobile {
+            padding-top: .5rem;
+        }
+        .channelmenu {
+            float: none;
+            display: none;
+            .topmenu {
+                position: relative;
+            }
+        }
+        .mainmenu {
+            padding-left: .75rem;
+            .logo {
+                width: 300px;
+                h1 {
+                    width: 100%;
+                    height: 48px;
+                }
+            }
+        }
+        .lines {
+            display: block;
+        }
+    }
+    @media (min-width: 320px) and (max-width: 568px) {
+        .mainmenu {
+            .logo {
+                width: 85%;
+            }
+        }
+    }
+}

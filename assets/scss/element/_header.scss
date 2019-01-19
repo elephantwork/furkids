@@ -1,0 +1,51 @@
+#header {
+     font-size: .875rem;
+     font-weight: 700;
+     padding: 1rem;
+     &.is-fixed {
+         position: fixed;
+         left: 0;
+         top: 0;
+         width: 100%;
+         z-index: 99;
+     }
+    &.is-scroll {
+         background: rgba(255, 255, 255, .8);
+        border-bottom: #ccc 1px solid;
+    }
+     .container {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         nav {
+             flex: 1;
+             text-align: right;
+             li {
+                 display: inline-block;
+                 margin: 0 10px;
+             }
+             .active {
+                 border-radius: 100px;
+                 background: $orange;
+                 color: white;
+                 padding: 8px 1.25rem;
+             }
+         }
+     }
+     @media (min-width: 320px) and (max-width: 736px) {
+         background: white;
+         padding: .75rem .5rem;
+         .container {
+             display: block;
+             img {
+                 width: 180px;
+             }
+             nav {
+                 text-align: center;
+                 li {
+                     margin: 10px 5px 0;
+                 }
+             }
+         }
+     }
+}

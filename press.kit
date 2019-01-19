@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>最新新聞-社團法人臺北市毛小孩幸福聯盟協會</title>
+		<link rel="icon" href="favicon.ico" />
+		<link media="screen" rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+        <link media="screen" rel="stylesheet" type="text/css" href="/assets/vendors/fullpage/jquery.fullpage.css"/>
+        <link media="screen" rel="stylesheet" type="text/css" href="/assets/vendors/animations/animations.css">
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="www.furkidstw.org/" />
+		<meta property="og:site_name" content="毛小孩幸福聯盟協會" />
+		<meta property="og:title" content="毛小孩幸福聯盟協會"/>
+		<meta property="og:description" content="台灣第一個巨型犬中途之家，「社團法人臺北市毛小孩幸福聯盟協會」103證社字第140號 立案字號：北市社會字號第3637號" />
+		<meta property="og:image" content="http://www.mzqy.org/images/logo_mzqy.png" />
+		<meta name="keywords" content="毛小孩幸福聯盟協會,獒犬,高加索犬,巨型犬,毛小孩中途之家" />
+		<meta name="description" content="台灣第一個巨型犬中途之家，「社團法人臺北市毛小孩幸福聯盟協會」103證社字第140號 立案字號：北市社會字號第3637號"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+		<meta name="MobileOptimized" content="320" />
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="format-detection" content="telephone=yes" />
+		<!--[if lt IE 9]>
+			<script src="/assets/js/html5shiv.js"></script>
+			<script src="/assets/js/css3-mediaqueries.js"></script>
+			<script src="/assets/js/respond.min.js"></script>
+		<![endif]-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+	</head>
+
+	<body>
+		<div class="out-wrapper" id="wrapper">
+		
+			<!-- @import "components/_header" -->
+            
+			<!-- Content -->
+			<div class="maincontent">
+                <main class="list" data-sticky_column>
+                    <div class="container">
+                        <div class="toolbar clearfix">
+                            <div class="films-filter flexbox grid4 cd-tab-filter-wrapper">
+                                <div class="cd-tab-filter" id="filter-program">
+                                    <ul class="cd-filters">
+                                        <!-- 依分類給 data-filter / data-type 的值，與資料的class對應 -->
+                                        <li class="placeholder"><a href="#" class="dropdown-item selected" data-type="all">單元</a><span class="ion-chevron-down"></span></li>
+                                        <li class="filter"><a href="#0" class="dropdown-item" data-type="all">所有</a></li>
+                                        <li class="filter" data-filter=".openaandclosing"><a href="#0" class="dropdown-item" data-type="openaandclos"></a></li>
+                                        <li class="filter" data-filter=".Competition"><a href="#0" class="dropdown-item" data-type="Competition"></a></li>
+                                    </ul>
+                                </div>
+                                <div class="cd-tab-filter" id="filter-age">
+                                    <ul class="cd-filters">
+                                       <li class="placeholder"><a href="#0" class="dropdown-item selected" data-type="all">年齡</a><span class="ion-chevron-down"></span></li>
+                                        <li class="filter"><a href="#0" class="dropdown-item" data-type="age-all">所有年齡</a></li>
+                                        <li class="filter" data-filter=".ages-4"><a href="#0" class="dropdown-item" data-type="ages-4">4+</a></li>
+                                        <li class="filter" data-filter=".ages-8"><a href="#0" class="dropdown-item" data-type="ages-8">8+</a></li>
+                                        <li class="filter" data-filter=".ages-11"><a href="#0" class="dropdown-item" data-type="ages-11">11+</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- @import "components/_list" -->
+                    </div>
+                </main>
+			</div>
+            <!-- /Content -->
+            
+            <!-- @import "components/_footer" -->
+		</div>
+		<!-- GA -->
+        <script type="text/javascript">
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-60769371-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+        <script type="text/javascript">
+            // header scroll fix
+            $(window).scroll(function(){
+                if ($(window).scrollTop() >= 300) {
+                   $('.mainmenu').addClass("fixed-header");
+                }
+                else {
+                   $('.mainmenu').removeClass("fixed-header");
+                }
+            });
+        </script>
+	</body>
+</html>

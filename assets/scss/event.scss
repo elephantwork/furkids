@@ -1,0 +1,377 @@
+@import "base/_reset";
+@import "base/_grid";
+@import "base/_helper";
+@import "element/_header";
+@import "element/_gallery";
+@import "element/_form";
+@import "element/_footer";
+
+body {
+    background-color: #85d61a;
+	background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+//    background-color: #85d61a;
+//    background-image: url("https://www.transparenttextures.com/patterns/rough-cloth-light.png");
+	font-family: "Times New Roman", Times, Microsoft JhengHei, "微軟正黑體", LiHei Pro, "儷黑體", PMingLiu, "新細明體", sans-serif;
+	font-size: 13px;
+    line-height: 1.8em;
+	position: relative;
+	font-weight: 400
+}
+a:link, a:visited {
+	color: #ec3611;
+}
+a:hover {
+	text-decoration: underline;
+}
+h1 {
+	font-size: 2.6em;
+}
+h2 {
+	font-size: 1.6em;
+}
+h3 {
+	font-size: 1.45em;
+	font-weight: 400;
+}
+h4 {
+	font-size: 15px;
+}
+h5 {
+	font-size: 1em;
+}
+/* layout */
+.out-wrapper {
+//	background: url("../images/bg2.png") 0 80px no-repeat;
+    margin: 0 auto -50px;
+    padding-bottom: 30px;
+    text-align: center;
+    width: 90%;
+    max-width: 900px;
+    position: relative;
+}
+//.logo {
+//    margin: -60px auto -35px;
+//    width: 250px;
+//}
+//.logo img {width: 100%}
+.section {
+    margin: 30px auto;
+    width: 85%;
+    max-width: 720px;
+}
+.section p {
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 160%;
+    margin: 18px auto;
+}
+.headline {margin: 0 0 18px;color: #ec3611}
+.headline h3 {
+    display: inline-block;
+    border-bottom: #ec3611 2px solid;
+    padding-bottom: 5px;
+}
+.list li, .social li {
+    display: inline-block;
+}
+.list li small, .social li small {
+    displaY: block;
+    margin: 5px auto
+}
+.list li {
+    background: #FFF;
+    margin: 0 1% 10px 1%;
+    padding: 4px;
+    width: 21%;
+}
+//.social li {margin: 10px 1.5% 10px;text-align: center;}
+//.social a, .social .line {
+//    color: #FFF;
+//    displaY: block;
+//    -webkit-border-radius: 48px;
+//    -moz-border-radius: 48px;
+//    border-radius: 48px;
+//    line-height: 48px;
+//    margin: 0 auto;
+//    width: 48px;
+//    height: 48px;
+//    text-indent: -9999em
+//}
+//.social .facebook {background: url("../images/social_bg.png") 0 0 no-repeat #2b4ca0;background-size: cover}
+//.social .line {background: url("../images/social_bg.png") 0 -48px no-repeat #14c400;background-size: cover}
+//.social .blog {background: url("../images/social_bg.png") 0 -96px no-repeat #2b9ba3;background-size: cover}
+
+///* form */
+.supportform {
+	background-color: #FFF;
+    border-radius: 5px;
+	margin: 30px auto;
+	padding: 20px 30px;
+	width: 70%;
+	position: relative;
+}
+//.infoDonation, .infoInvoice {text-align: left;margin: 0 auto;width: 90%;max-width: 320px;}
+//.infoDonation h4, .infoInvoice h4 {margin-bottom: 8px;text-align: center;}
+//.supportform .item_field input.widthset2 {width: 45%;}
+//.supportform .item_field input.widthset3 {width: 40px;}
+//.supportform label, .supportform .row span {
+//	display: inline-block;
+//    width: 85px;
+//}
+//.supportform .item_field input[type="text"] + label {margin-left: 30px}
+//.infoDonation select {
+//    border: #333 1px solid;
+//    margin-left: -3px;
+//    width: 72%;
+//}
+//.supportform .button {
+//	background: #117ED2;
+//	display: inline-block;
+//    margin: 30px auto 20px;
+//	font-size: 16px;
+//	width: 240px;
+//}
+//.supportform .button:hover {
+//	background: #D90000;
+//}
+//.supportform .row {margin: 4px 0;}
+//.item_field {
+//    margin-bottom: 10px;
+//    text-align: left;
+//    overflow: hidden;
+//}
+//.item_field input[type="text"], .item_field input[type="password"], .item_field seelct {
+//    border: #333 1px solid;
+//    padding: 8px 10px;
+//    width: 65%;
+//}
+//.supportform .center .button {
+//    background: #ec3611;
+//    color: #FFF;
+//    border: none;
+//    -webkit-border-radius: 4px;
+//    -moz-border-radius: 4px;
+//    border-radius: 4px;
+//    cursor: pointer;
+//    font-size: 16px;
+//    line-height: 36px;
+//    margin: 10px auto 0;
+//    outline: none
+//}
+//.item_field.center .button:hover {
+//    background: #117ED2;
+//}
+.info .container {
+    float: left;
+    margin: 0 4%;
+    width: 40%;
+}
+
+/* Style */
+a.actionButton {
+	border: #000 1px solid;
+	display: inline-block;
+	margin: 0 8px;
+	padding: 15px 50px;
+	text-decoration: none
+}
+a.actionButton:hover {
+	background-color: #000;
+	color: #FFF;
+}
+a.buttonstyle, .buttonstyle {
+	background: #D90000;
+	color: #FFF;
+	display: inline-block;
+	font-size: 1.1em;
+	margin: 5px auto 0;
+	text-align: center;
+	padding: 12px 50px;
+    border: none;
+}
+a.buttonstyle:hover, .buttonstyle:hover {
+	background-color: #000;
+	text-decoration: none
+}
+.readmore, a.readmore {
+	border: #FFF 1px solid;
+	display: inline-block;
+	vertical-align: middle;
+}
+a.readmore:hover {
+	text-decoration: none;
+	border: none
+}
+.buttonStyle, a.buttonStyle {
+	background: #FFF;
+	border: #333 1px solid;
+	color: #000;
+	cursor: pointer;
+	display: inline-block;
+	margin: 5px auto;
+	text-align: center;
+	text-decoration: none;
+	padding: 5px 10px;
+	outline: none
+}
+.buttonStyle:hover {
+	background: #000;
+	color: #FFF;
+	text-decoration: none;
+}
+.center .buttonStyle {
+	width: 100%;
+	padding: 6px 0
+}
+.submitbutton, a.submitbutton {
+	background: #D90000;
+	border: #D90000 1px solid;
+	color: #FFF;
+	font-size: 15px;
+	padding: 12px 0px;
+	width: 100%;
+}
+.submitbutton:hover, .accounts a.submitbutton:hover {
+	background: #000;
+	text-decoration: none;
+	border-color: #000
+}
+/* general */
+.gototop {
+	position: absolute;
+	z-index: 99;
+}
+.gototop a {
+	background-color: #E71C2A;
+	color: #FFF;
+	display: block;
+	font-size: 12px;
+	line-height: 36px;
+	width: 36px;
+	height: 36px;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+.gototop a:hover {
+	background-color: #000;
+	background-image: none;
+	line-height: 36px;
+	text-indent: 0;
+	text-align: center;
+	text-decoration: none;
+}
+.rule {
+	list-style-type: square;
+	line-height: 1em;
+	margin: 5px 0;
+	padding-left: 18px;
+	text-align: left;
+}
+ol.rule {
+	color: #333;
+	list-style-type: decimal;
+	margin-left: 10px;
+}
+.rule > li {
+	line-height: 18px;
+	margin: 5px 0;
+}
+.rule ul {
+	list-style-type: square;
+	margin-left: 18px;
+}
+.message {
+	border: #FFF 1px solid;
+	font-size: 0.8em;
+	margin: 25px auto;
+	padding: 0 25px;
+	width: 80%
+}
+.note {
+	background-color: #EEE;
+	margin: 15px auto;
+	padding: 15px;
+}
+.note .container {
+	background-color: #FFF;
+	margin-bottom: 20px;
+	padding: 20px;
+}
+.gray {
+	color: #808080;
+}
+.center {
+	text-align: center;
+}
+.right {
+	text-align: right;
+}
+.space {
+	margin: 20px auto;
+}
+.space_top {
+	margin-top: 35px;
+}
+.space_bottom {
+	margin-bottom: 35px;
+}
+a.line, .line {
+	text-decoration: underline;
+}
+//.clear {
+//	clear: both;
+//}
+//.clearfix:after, .article_item:after {
+//	content: ".";
+//	clear: both;
+//	display: block;
+//	font-size: 0;
+//	height: 0;
+//	visibility: hidden;
+//}
+.sponsor {
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+}
+
+.dog1 {position: absolute;top: 60px;right: 12.5%;}
+.dog2 {position: absolute;top: 60px;left: 7.5%}
+
+/**/
+@media screen and (max-width: 768px) {
+.wrapper {background: url("../images/bg2.png") -50px 80px no-repeat;width: 95%;}
+.section {width: 90%}
+.supportform {padding: 20px;width: 80%;}
+.dog1 {width: 125px;right: 5%}
+.dog2 {width: 150px;left: 5%}
+}
+@media screen and (max-width: 414px) {
+.wrapper {background: url("../images/bg2.png") -50px 0px repeat-y}
+.dog1, .dog2 {display: none}
+.info .container {float: none;margin: 10px 0;width: 100%}
+.list li {width: 44%;vertical-align: top;} .supportform {padding: 15px;width: 85%;}
+.infoDonation, .infoInvoice {margin: 0;width: 100%}
+.supportform {padding: 20px;width: 80%;}
+.supportform .item_field input[type="text"], .infoInvoice .item_field input[type="text"]  {width: 92%}
+.supportform .item_field input.widthset2 {width: 75%;}
+.supportform .item_field input.widthset3 {width: 30px}
+.supportform .item_field input[type="text"] + label {margin: 10px 0 0 0}
+.infoDonation select {width: 100%;margin: 0;height: 44px}
+.supportform .item_field input[type="text"], .infoInvoice .item_field input[type="text"] {line-height: 28px}
+.supportform label, .supportform .row span {width: auto}
+}
+@media screen and (max-width: 320px) {
+.wrapper {background: url("../images/bg2.png") -50px 30px repeat-y}
+.logo {width: 200px;margin: -50px auto -35px;}
+.list li {width: 44%;min-height: 182px;vertical-align: top;}
+.supportform {padding: 15px;width: 85%;}
+.infoDonation, .infoInvoice {margin: 0}
+.supportform .item_field input[type="text"] {width: 145px}
+.infoInvoice .item_field input[type="text"]  {width: 185px}
+.supportform .item_field input.widthset2 {width: 70px;}
+.supportform .item_field input.widthset3 {width: 30px}
+.supportform .item_field input[type="text"] + label {margin: 10px 0 0 0}
+.infoDonation select {width: 165px}
+}

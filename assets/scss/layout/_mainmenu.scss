@@ -1,0 +1,272 @@
+// Note: we use Autoprefixer to add vendor prefixes to our CSS -> https://github.com/postcss/autoprefixer
+
+// center vertically and/or horizontally an absolute positioned element
+@mixin center($xy:xy) {
+  @if $xy == xy {
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  @else if $xy == x {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+  @else if $xy == y {
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+}
+
+/* -------------------------------- 
+ Header
+-------------------------------- */
+
+.cd-morph-dropdown {
+	position: relative;
+
+	&::before {
+		/* never visible - used in JS to check mq */
+		content: 'mobile';
+		display: none;
+	}
+
+	.nav-trigger {
+		/* menu icon - visible on small screens only */
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 60px;
+		width: 60px;
+		/* replace text with icon */
+		overflow: hidden;
+		text-indent: 100%;
+		white-space: nowrap;
+		color: transparent;
+
+		span, span::after, span::before {
+			/* these are the 3 lines of the menu icon */
+			position: absolute;
+			background-color: $color-1;
+			height: 3px;
+			width: 26px;
+            z-index: 50;
+		}
+
+		span {
+			@include center;
+			transition: background-color .3s;
+		}
+
+		span::after, span::before {
+			content: '';
+			left: 0;
+			transition: transform .3s;
+		}
+
+		span::before {
+			transform: translateY(-9px);
+		}
+
+		span::after {
+			transform: translateY(9px);
+		} 
+	}
+
+	&.nav-open .nav-trigger span {
+		background-color: transparent;
+
+		&::before {
+			transform: rotate(45deg);
+		}
+
+		&::after {
+			transform: rotate(-45deg);
+		}
+	}
+
+	.main-nav {
+		display: none;
+	}
+
+	.morph-dropdown-wrapper {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+        text-align: center;
+        z-index: 49;
+	}
+
+	&.nav-open .morph-dropdown-wrapper {
+		display: block;
+	}
+
+	.label {
+		display: none;
+		color: $color-1;
+        margin-bottom: -.75rem;
+	}
+
+	.links-list a {
+		display: block;
+		&:hover {
+			color: $color-1;
+		}
+	}
+
+	@include MQ(L) {
+
+		&::before {
+			content: 'desktop';
+		}
+
+		.nav-trigger {
+			display: none;
+		}
+
+		.main-nav {
+			display: inline-block;
+		}
+
+		.main-nav > ul > li > a {
+			display: block;
+			transition: opacity .2s;
+		}
+
+		&.is-dropdown-visible .main-nav > ul > li > a {
+			/* main navigation hover effect - on hover, reduce opacity of elements not hovered over */
+			opacity: .6;
+		}
+
+		&.is-dropdown-visible .main-nav > ul > li.active > a {
+			opacity: 1;
+		}
+
+		.morph-dropdown-wrapper {
+			/* dropdown wrapper - used to create the slide up/slide down effect when dropdown is revealed/hidden */
+			display: block;
+			top: 62px;
+            left: 0px;
+			/* overwrite mobile style */
+			width: auto;
+			padding: 0;
+			box-shadow: none;
+			background-color: transparent;
+			/* Force Hardware acceleration */
+			transform: translateZ(0);
+			will-change: transform;
+			transform: translateY(20px);
+			transition: transform .3s;
+		}
+
+		&.is-dropdown-visible .morph-dropdown-wrapper {
+			transform: translateY(0);
+		}
+
+		.mainmenu-dropdown-list {
+			position: absolute;
+			top: 0;
+			left: 0;
+			visibility: hidden;
+			transform: translateZ(0);
+			will-change: transform, width, height;
+			transition: visibility .3s;
+			box-shadow: 0 10px 20px rgba(0, 0, 0, .08);
+            border-radius: 5px;
+            overflow: hidden;
+            
+            a {
+                background: rgba(33, 150, 243, .8);
+                color: $color-5;
+                padding: .35rem 0;
+                margin-bottom: 1px;
+                line-height: 32px;
+            }
+
+			.no-csstransitions & {
+				display: none;
+			}
+
+			&::before {
+				/* dropdown top triangle */
+				content: '';
+				position: absolute;
+				bottom: 100%;
+				@include center(x);
+				height: 0;
+				width: 0;
+				border: 8px solid transparent;
+				opacity: 0;
+				transition: opacity .3s;
+			}
+
+			> ul {
+				position: relative;
+				z-index: 1;
+				height: 100%;
+				width: 100%;
+				overflow: hidden;
+			}
+		}
+
+		&.is-dropdown-visible .mainmenu-dropdown-list {
+			visibility: visible;
+			transition: transform .3s, width .3s, height .3s;
+
+			&::before {
+				opacity: 1;
+			}
+		}
+
+		.mainmenu-dropdown {
+			position: absolute;
+			left: 0;
+			top: 0;
+			opacity: 0;
+			visibility: hidden;
+			width: 100%;
+			transition: opacity .3s, visibility .3s;
+
+			&.active {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+
+		.content {
+			transition: transform .3s;
+			text-align: center;
+            width: 160px;
+		}
+
+		.links .content > ul > li {
+			margin-top: 0;
+		}
+
+		.bg-layer {
+			/* morph dropdown background */
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 1px;
+			width: 1px;
+			opacity: 0;
+			transition: opacity .3s;
+			transform-origin: top left;
+			transform: translateZ(0);
+			will-change: transform;
+			backface-visibility: hidden;
+		}
+
+		&.is-dropdown-visible .bg-layer {
+			opacity: 1;
+			transition: transform .3s, opacity .3s;
+		}
+	}
+    
+}

@@ -1,0 +1,115 @@
+#footer {
+	line-height: 26px;
+    width: 100%;
+    position: relative;
+    background-image: linear-gradient(to right, rgba(44, 166, 224, .75), rgba(82, 177, 149, 1));
+    color: white;
+    padding: 1rem 0;
+//    .footer-link {
+//        padding: 1.25rem 0;
+//        h5 {
+//            margin: 1rem auto .5rem;
+//        }
+//        p {
+//            font-size: 12px;
+//            margin: .5rem auto .75rem;
+//            line-height: 21px;
+//            position: relative;
+//            &:after {
+//                content: "";
+//                width: 75%;
+//                height: 1px;
+//                background: white;
+//                position: absolute;
+//                left: 12.5%;
+//                bottom: -10px;
+//            }
+//        }
+//    }
+    .footer-social {
+        margin: 0 auto 15px;
+        text-align: center;
+        li {
+            display: inline-block;
+            margin: 10px 5px 0;
+            font-size: 1.8em;
+            a {
+                color: white;
+            }
+        }
+        img {
+            width: 30px;
+            position: relative;
+            top: 4px
+        }
+    }
+    .copyright {
+        font-size: 13px;
+        padding: 5px 0px;
+        text-align: center;
+    }
+    .link li {
+		display: inline-block;
+        position: relative;
+        &:after {
+            content: "";
+            width: 1px;
+            height: 50%;
+            background: white;
+            position: absolute;
+            right: 0;
+            top: 25%;
+        }
+        &:last-child:after {
+            content: none;
+        }
+        a, span {
+            color: white;
+            padding: 10px 10px;
+        }
+    }
+    @media screen and (max-width: 320px) {
+        .footer-link li {
+            display: inline-block;
+            text-align: center;
+            padding: 10px 10px 10px 5px;
+            position: relative;
+            &:first-child {
+                padding-left: 0
+            }
+            &:last-child {
+                background: none;padding-right: 0;
+            }
+        }
+    }
+}
+
+.footer-nav {
+    position: relative;
+    a {
+        font-size: .875em;
+        position: relative;
+        display: inline-block;
+        line-height: 15px;
+        &:after {
+            content: "/";
+            position: absolute;
+            right: 0;
+            top: 0px;
+            color: #212121;
+            font-size: .875em;
+        }
+        &:last-child:after {
+            content: "";
+        }
+    }
+    &:before {
+        content: "";
+        width: 32px;
+        height: 32px;
+        background: #212121;
+        display: inline-block;
+        position: relative;
+        top: 2px;
+    }
+}

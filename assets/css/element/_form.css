@@ -1,0 +1,74 @@
+.supportform {
+  width: 95%;
+  margin: 1em auto .5em;
+  clear: both;
+  text-align: center; }
+  .supportform .item_field {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: .75em auto; }
+    .supportform .item_field label:first-child {
+      width: 80px;
+      line-height: 42px;
+      font-size: .875em;
+      -webkit-flex: .2;
+      -ms-flex: .2;
+      flex: .2;
+      text-align: right;
+      margin: 0 5px 0 0; }
+    .supportform .item_field select, .supportform .item_field input[type="text"], .supportform .item_field input[type="email"], .supportform .item_field input[type="date"], .supportform .item_field input[type="tel"] {
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      font-size: .9em;
+      width: 90%; }
+    .supportform .item_field input {
+      border-radius: 4px;
+      border: #AAA 1px solid; }
+    .supportform .item_field.row {
+      margin: -6px 0 12px;
+      padding: 0 0 0 75px;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; }
+      .supportform .item_field.row input:first-child {
+        -webkit-flex: .25;
+        -ms-flex: .25;
+        flex: .25;
+        width: 60px;
+        margin-right: 5px; }
+  .supportform .button {
+    background: #D90000;
+    margin: 15px auto 30px;
+    font-size: 16px;
+    width: 100%;
+    border: none;
+    line-height: 40px;
+    color: white; }
+    .supportform .button:hover {
+      background: #A90000; }
+  .supportform select {
+    height: 40px;
+    background: #FFF;
+    border-radius: 0; }
+  .supportform h4 {
+    border-left: 3px #D90000 solid;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    text-align: left;
+    font-weight: 900; }
+
+.moremore {
+  padding: 2em 0;
+  text-align: left;
+  font-size: .875em; }
+  .moremore .info .container {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: .75em auto 1.25em; }
+    .moremore .info .container h5 {
+      margin-right: 1em;
+      padding: .5em 1em;
+      background: #CCC; }

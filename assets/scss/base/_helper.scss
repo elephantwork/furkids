@@ -1,0 +1,186 @@
+// General colors
+
+$black:        hsl(0, 0%, 4%) !default;
+$black-bis:    hsl(0, 0%, 7%) !default;
+$black-ter:    hsl(0, 0%, 14%) !default;
+
+$grey-darker:  hsl(0, 0%, 20%) !default;
+$grey-dark:    hsl(0, 0%, 30%) !default;
+$grey:         hsl(0, 0%, 50%) !default;
+$grey-light:   hsl(0, 0%, 75%) !default;
+$grey-lighter: hsl(0, 0%, 90%) !default;
+
+$white-ter:    hsl(0, 0%, 96%) !default;
+$white-bis:    hsl(0, 0%, 98%) !default;
+$white:        hsl(0, 0%, 100%) !default;
+
+$orange:       hsl(14,  100%, 53%) !default;
+$yellow:       hsl(48,  100%, 67%) !default;
+$green:        hsl(141, 71%,  48%) !default;
+$turquoise:    hsl(171, 100%, 41%) !default;
+$cyan:         hsl(204, 86%,  53%) !default;
+$blue:         hsl(217, 71%,  53%) !default;
+$red:          hsl(348, 100%, 61%) !default;
+
+$alpha: .8;
+
+$color-1: #000000; // black
+$color-2: #3e454c; // Mako
+$color-3: #757575; // Gray
+$color-4: #E9ECEF; // Light Gray
+$color-5: #ffffff; // White
+$color-6: #e94800; // Salmon #EE7D1C
+$color-7: #FFD700; // Yellow
+$color-8: #FFF100; // Yellow-light FFF100
+$color-9: #2196F3; // Denim 1976D2
+$color-10: #00A6DD; // Denim-light 
+$color-11: #388E3C; // Green
+$color-12: #8BC34A; // Green-light
+$color-13: #D32F2F; // Red
+$color-14: #F44336; // Red-light
+
+// Typography
+
+$content-font: "Open Sans", Helvetica, Arial, Microsoft JhengHei, "微軟正黑體", LiHei, "黑體", PMingLiu,"新細明體", sans-serif;
+$title-font: source-han-serif-tc,PT Serif,"source-han-serif-tc",Songti TC,serif;
+
+$family-sans-serif: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+$family-monospace: monospace !default;
+$render-mode: optimizeLegibility !default;
+    
+$size-1: 3rem !default;
+$size-2: 2.4rem !default;
+$size-3: 2rem !default;
+$size-4: 1.35rem !default;
+$size-5: 1.25rem !default;
+$size-6: 1rem !default;
+$size-7: 0.875rem !default;
+
+$weight-light: 300 !default;
+$weight-normal: 400 !default;
+$weight-medium: 500 !default;
+$weight-semibold: 600 !default;
+$weight-bold: 700 !default;
+
+// icon font
+
+@font-face {
+    font-family: 'fontello';
+    src: url('../fonts/fontello.eot');
+    src: url('../fonts/fontello.eot#iefix') format('embedded-opentype'),
+       url('../fonts/fontello.woff2') format('woff2'),
+       url('../fonts/fontello.woff') format('woff'),
+       url('../fonts/fontello.ttf') format('truetype'),
+       url('../fonts/fontello.svg#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+
+    /* you can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-mail:before { content: '\e800'; } /* '' */
+.icon-cancel:before { content: '\e801'; } /* '' */
+.icon-ok:before { content: '\e802'; } /* '' */
+.icon-down-open:before { content: '\f004'; } /* '' */
+.icon-up-open:before { content: '\f005'; } /* '' */
+.icon-right-open:before { content: '\f006'; } /* '' */
+.icon-left-open:before { content: '\f007'; } /* '' */
+.icon-ok-circled:before { content: '\f06d'; } /* '' */
+.icon-cancel-circled:before { content: '\f06e'; } /* '' */
+.icon-mail-alt:before { content: '\f0e0'; } /* '' */
+.icon-facebook-rect:before { content: '\f301'; } /* '' */
+.icon-instagram-filled:before { content: '\f31f'; } /* '' */
+
+// Responsiveness
+
+$S:     480px;
+$M:     768px;     
+$L:     1170px; 
+$F:     1344px;
+$W:     1440px;
+$X:     1680px;
+$XL:    1920px;
+
+// media queries
+
+$gap: 32px !default;
+$mobile: 320px !default;
+// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$tablet: 769px !default;
+// 960px container + 3rem
+$desktop: 960px + (2 * $gap) !default;
+// 1152px container + 3rem
+$widescreen: 1152px + (2 * $gap)  !default;
+// 1344px container + 3rem
+$fullhd: 1344px + (2 * $gap)  !default;
+
+// Responsiveness
+
+@mixin from($device) {
+    @media screen and (min-width: $device) {
+        @content  
+    }
+}
+
+@mixin until($device) {
+    @media screen and (max-width: $device - 1px) {
+        @content
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: $tablet - 1px) {
+        @content   
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: $tablet), print {
+        @content
+    }
+}
+
+@mixin tablet-only {
+    @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+        @content
+    }
+}
+
+@mixin touch {
+    @media screen and (max-width: $desktop - 1px) {
+        @content
+    }
+}

@@ -1,0 +1,289 @@
+// list
+.list {
+    background: $color-5;
+    padding: 16px 32px;
+    .item {
+        display: flex;
+        margin: 32px auto;
+    }
+    .content {
+        flex: 1;
+        margin: -.25rem 0 0 1rem;
+        h2 {
+            font-size: 1.2rem;
+            line-height: 120%;
+            margin-bottom: .25rem;
+        }
+        p {
+            font-size: $size-7;
+            color: $color-2;
+            line-height: 170%;
+            text-align: justify;
+            text-justify: distribute;
+        }
+    }
+    
+    &.dogs {
+        .gridlayout4 {
+            margin: 0 1%;
+            width: 31.3%;
+            min-height: 250px;
+        }
+        .thumb {
+            border-radius: 5px;
+            overflow: hidden;
+            max-height: 160px;
+        }
+        h3 {
+            font-size: 1.15rem;
+            margin: .25rem auto .15rem;
+            line-height: 120%;
+        }
+        .info {
+            display: flex;
+            margin: 0;
+        }
+    }
+    
+    @include mobile {
+        padding: .35rem 0 1rem;
+        .item {
+            display: block;
+            margin: 24px auto;
+            padding: 0 1rem;
+        }
+        .content {
+            margin: .25rem auto 0;
+            h2 {
+                font-size: 1.15rem;
+            }
+        }
+    }
+}
+
+.info {
+    font-size: .8rem;
+    margin: 0 auto .5rem;
+    color: $color-3;
+    height: 16px;
+    span {
+        padding: 0 10px;
+        position: relative;
+        &:after {
+            content: "";
+            position: absolute;
+            top: 3px;
+            right: 0;
+            width: 1px;
+            height: 80%;
+            background: $color-3
+        }
+        &:first-child {
+            padding-left: 0
+        }
+        &:last-child:after {
+            content: none
+        }
+    }
+    .rating {
+        margin: 0 8px!important;
+        padding: 0 4px;
+    }
+}
+
+.post-item {
+    display: block;
+    .thumb {
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    h3 {
+        margin: .25rem 0 .2rem;
+    }
+    .credits {
+//        font-size: .8rem;
+//        ul {
+//            display: flex;
+//        }
+        li {
+            color: $color-3;
+        }
+    } 
+    @media (max-width: 1024px) {
+        h3 {
+            font-size: 1.15rem;
+        }
+    }
+
+    /* Tablet */
+    @media (min-width: 768px) and (max-width: 1024px) {
+    }
+}
+
+
+// article
+.articleitem {
+    .thumb {
+        flex: .35;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+}
+
+//
+.information {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+     -webkit-box-pack: justify;
+     -ms-flex-pack: justify;
+    flex-wrap: wrap;
+    align-items: stretch;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    column-count: 2;
+    margin: 2rem -2%;
+    .information-item {
+        border-radius: 4px;
+        border: $color-3 1px solid;
+        box-shadow: 0 0 8px $color-4;
+        padding: 1rem;
+        overflow: hidden;
+        margin: 0 2% 2.4em!important;
+        flex: 0 46%;
+        -webkit-transition: box-shadow 300ms cubic-bezier(.55, .085, .68, .53);
+        transition: box-shadow 300ms cubic-bezier(.55, .085, .68, .53);
+        box-sizing: border-box;
+    }
+    .headline {
+        border-bottom: $color-3 1px solid;
+        margin-bottom: .5rem;
+        padding-bottom: .5rem;
+        text-align: center;
+        .title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            a {
+                display: inline-block;
+                position: relative;
+                padding-right: 15px;
+                &:after {
+                    content: "/";
+                    position: absolute;
+                    top: 0px;
+                    right: 4px;
+                    color: $color-3;
+                }
+                &:last-child {
+                    padding: 0;
+                }
+                &:last-child:after {
+                    content: none;
+                }
+            }
+        }
+    }
+    .quick-info {
+        font-size: .8rem;
+        margin-bottom: .25rem;
+        justify-content: center;
+        li {
+            display: inline-block;
+            margin: 0 4px;
+            padding: 0 8px 0 0px
+        }
+        
+    } 
+    @include mobile {
+        .information-item {
+            flex: none;
+            width: 90%;
+            margin: 0 auto 1em!important
+        }
+    }
+}
+
+.information-list {
+    display: flex;
+    li {
+        font-size: .8rem;
+//        border-bottom: $color-3 1px dotted;
+//        padding-bottom: .5rem;
+        margin: .5rem auto;
+        line-height: 32px;
+        overflow: hidden;
+        span {
+            margin-right: 4px;
+        }
+    }
+    @include mobile {
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        li {
+            line-height: 1;
+        }
+    }
+}
+
+.rule-list {
+    font-size: .9rem;
+    margin-bottom: 1rem;
+    padding-left: 24px;
+    list-style-type: decimal;
+    line-height: 1.8rem;
+    &.none {
+        list-style-type: none;
+        padding-left: 36px;
+        margin: .5rem auto 2rem;
+    }
+    li {
+        clear: both;
+        > ol {
+            padding-left: 60px;
+            margin: .5rem auto 1rem;
+        }
+    }
+    span.title {
+        display: block;
+        float: left;
+        margin: 0 0 .5rem;
+    }
+}
+
+// 特殊處理
+.rule {
+    .note {
+        color: $color-6;
+        font-size: $size-7;
+        margin: 0 0 .5rem 40px;
+    }
+    span.note {
+        display: block;
+        margin: 0;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    h3 {
+        font-weight: 900;
+    }
+    h4 {
+        margin: .5rem auto;
+        font-weight: 900;
+    }
+    p, table {
+        margin: 0.5rem auto 1.5rem!important;
+    }
+    h3 + ol {
+        margin: .5rem auto 2rem!important;
+    }
+    h3 + ol.award-list {
+        margin: .5rem auto!important;
+    }
+    ul + .note {
+        margin: -1.5rem auto 1rem;
+    } 
+}
