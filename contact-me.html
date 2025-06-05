@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>與我聯絡 - 毛小孩幸福聯盟協會</title>
+        <link rel="icon" href="favicon.ico" />
+        <link media="screen" rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+        <script type="text/javascript">
+            function chk() {
+                var d = document.form1;
+                if (d.name.value.trim() === '') { alert('請輸入姓名!!'); return false; }
+                if (d.email.value.trim() === '') { alert('請輸入E-Mail!!'); return false; }
+                if (d.context.value.trim() === '') { alert('請輸入內容!!'); return false; }
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <div class="out-wrapper" id="wrapper">
+            <header id="header" class="is-fixed overlayer">
+                <div class="container">
+                    <div class="logo">
+                        <h1><a href="/"><img src="/assets/images/logo.png" alt="毛小孩幸福聯盟協會" /></a></h1>
+                    </div>
+                    <nav class="mainnav">
+                        <ul id="menu" class="menu clearfix">
+                            <li><a href="http://furkidsasia.weebly.com/" target="_blank">毛小孩的故事</a></li>
+                            <li><a href="http://www.furkidstw.org/monthly.asp" target="_blank">99891狗狗巴豆腰</a></li>
+                            <li><a href="#donate">捐款贊助</a></li>
+                            <li><a href="contact.asp">聯絡我們</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <div class="maincontent">
+                <div class="single wrapper">
+                    <section class="section" id="contact-me">
+                        <div class="page flexbox">
+                            <div class="main-content">
+                                <div class="headline">
+                                    <h3>與我聯絡</h3>
+                                </div>
+                                <form class="contactform" id="form1" name="form1" action="#" method="post" onsubmit="return chk()">
+                                    <fieldset>
+                                        <div class="item_field">
+                                            <label for="name" class="title">姓&nbsp;&nbsp;&nbsp;名</label><input id="name" name="name" type="text" placeholder="請輸入姓名" />
+                                        </div>
+                                        <div class="item_field">
+                                            <label for="email" class="title">E-Mail</label><input id="email" name="email" type="email" placeholder="請輸入E-Mail" />
+                                        </div>
+                                        <div class="item_field">
+                                            <label for="context" class="title">內&nbsp;&nbsp;&nbsp;容</label><textarea name="context" id="context" placeholder="請輸入內容"></textarea>
+                                        </div>
+                                        <div class="item_field center"><button class="button submit" type="submit">確認送出</button></div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <footer id="footer">
+                <div class="wrapper clearfix">
+                    <div class="footer-social">
+                        <ul class="list-links">
+                            <li><a href="https://www.facebook.com/furkidstw/" target="_blank" title="Facebook"><span class="icon-facebook-rect"></span></a></li>
+                            <li><a href="https://www.instagram.com/furkidstw2012/" target="_blank" title="Instagram"><span class="icon-instagram-filled"></span></a></li>
+                            <li><a href="http://line.me/ti/p/furkidstw.org" target="_blank"><img src="https://www.mzqy.org/images/linebutton_30x30_en.png" alt="Line"></a></li>
+                        </ul>
+                    </div>
+                    <div class="copyright">
+                        <nav class="link">
+                            <ul class="clearfix">
+                                <li><a href="/contact.asp">聯絡我們 (專線：＋886-986-660-662)</a></li>
+                                <li><span>103證社字第140號 立案字號：北市社會字號第3637號</span></li>
+                            </ul>
+                        </nav>
+                        <p class="small clear">© 2013-2018 社團法人臺北市毛小孩幸福聯盟協會 All Rights Reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
